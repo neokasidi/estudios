@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+<input type="txt" id="numeroFactorial" pattern="[0-9]{5}" maxlength="2">
+<input type="submit" onclick="getFactorial()" value="Factorial">
+
+
+<hr><br>
+<input type="txt" id="numero" pattern="[0-9]{5}" maxlength="2">
+<input type="submit" onclick="getCaluloEdad()" value="Calcular Edad">
+
+<hr><br>
+<p id="respuesta"></p>
+
+<script>
+
+	//Ejercicio N° 1
+
+	var elementoUno    = 12345;
+	var elementoDOs    = 56789;
+	var elementoTres   = 1.58;
+	var elementoCuatro = 0.9888;
+
+	console.log(elementoUno);
+	console.log(elementoDOs);
+	console.log(elementoTres);
+	console.log(elementoCuatro);
+
+	//Ejercicio N° 2
+
+	function getFactorial () {
+
+		var totalIncrementando = 1;
+		var numeroFactorial = document.getElementById('numeroFactorial').value;
+		var respuesta = document.getElementById('respuesta');
+		respuesta.innerHTML = '';
+
+		if (numeroFactorial == '') {
+			return respuesta.innerHTML = 'Debe ingresar un valor valido.';
+		}
+
+		for (i = 1; i <= numeroFactorial; i++) {
+			totalIncrementando = totalIncrementando * i; 
+		}
+		respuesta.innerHTML = 'Su factorial es: ' + totalIncrementando;
+		document.getElementById('numeroFactorial').value = "";
+	}
+
+	//Ejercicio N° 3
+
+	function getCaluloEdad(){		
+		var edad = document.getElementById('numero').value;
+		var respuesta = document.getElementById('respuesta');
+		if (edad > 18) { //segun solicitud es solo si es mayor no si es mayor o igual
+
+			respuesta.innerHTML = 'usted es mayor de edad.';
+			//console.log('ud es mayor de edad');
+		}else {
+			respuesta.innerHTML = 'usted no es mayor de edad.';			
+		}
+		document.getElementById('numero').value = "";
+	}	
+</script>
+
+</body>
+</html>

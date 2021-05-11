@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+	<p id="test1">Prueba</p>
+
+	<input id="ingresoNumeros" type="text">
+	<button type="" value="Suma" onclick="Suma()">Sumar</button>
+	<script>
+		//Tarea 1 Suma de todos los numeros menores
+
+		var _suma = 0;
+
+		function Suma(){
+			var e = $('#ingresoNumeros').val();
+			var numeroDado = 4;
+			if (parseInt(e) < numeroDado){
+				_suma = parseInt(_suma) + parseInt(e);
+			}
+			console.log("ingresaste: " + e + " Total: " +_suma);
+			$('#ingresoNumeros').val('');
+		}
+
+
+		//Tarea 2 Crear objeto
+		var auto = new Object();
+		auto.marca   = "nissan";
+		auto.color   = "blanco";
+		auto.puertas = 4;
+		auto.airbag  = true;
+		auto.full    = [{"radio":"true","alzavidrios":"true"}];
+		//console.log(auto);
+
+		//Tarea 3 funcion que permita encontrar elementos
+		function buscar_elementos(e)
+		{
+			let data = $('#' + e);
+			console.log(data.text());
+		}
+
+		buscar_elementos("test1");
+
+	</script>
+
+</body>
+</html>
